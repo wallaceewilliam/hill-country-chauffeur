@@ -16,7 +16,7 @@ export default function Navbar() {
   const light = scrolled || open;
   return <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${light ? "border-b border-olive/10 bg-cream/95 shadow-sm shadow-olive/5 backdrop-blur-md" : "bg-gradient-to-b from-black/50 to-transparent"}`}>
     <nav aria-label="Primary" className="site-shell flex h-24 items-center justify-between">
-      <Link href="/" className={`font-serif text-lg tracking-[.19em] sm:text-xl ${light ? "text-olive" : "text-cream"}`}>HILL COUNTRY<span className="block text-[9px] tracking-[.46em] text-gold">CHAUFFEUR</span></Link>
+      <Link href="/" className={`font-serif text-xl font-semibold tracking-[.19em] sm:text-2xl ${light ? "text-olive" : "text-cream drop-shadow-[0_2px_7px_rgba(0,0,0,.72)]"}`}>HILL COUNTRY<span className={`mt-1 block text-[10px] font-bold tracking-[.5em] ${light ? "text-gold" : "text-[#e4b85b] [text-shadow:0_2px_5px_rgba(0,0,0,.9)]"}`}>CHAUFFEUR</span></Link>
       <div className="hidden items-center gap-9 lg:flex">{links.map(([label, href]) => <Link key={href} href={href} className={`nav-link ${light ? "!text-olive/75 hover:!text-gold" : ""}`}>{label}</Link>)}<Link href="/contact" className="button button-gold px-6 py-3 text-xs">Plan a day</Link></div>
       <button className={`grid h-10 w-10 place-items-center lg:hidden ${light ? "text-olive" : "text-cream"}`} onClick={() => setOpen(!open)} aria-label={open ? "Close menu" : "Open menu"}>{open ? <X /> : <Menu />}</button>
     </nav>
